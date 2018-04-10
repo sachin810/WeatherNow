@@ -1,32 +1,35 @@
 {% extends 'base.html' %}
 {% block body %}
+<!--{% load staticfiles %}-->
 
 <br>
 <br>
+<!--<img src="static/css/images/4.gif" height="55" width="55" >-->
 <br>
 <br>
 <br>
 <br>
 <br>
-<h4 style="color: whitesmoke">{{city}}, {{country}}</h4>
+{% if form.is_valid %}
+    <h4 style="color: whitesmoke">{{city}}, {{country}}</h4>
 <br>
-<div id="container-fluid">
-    <div class="row">
-        {% if form.is_valid %}
-        <div class="col-sm-3">
-            <div class="container text-center hi" style="background: whitesmoke"><br>
-                <iframe class="clock" src="http://free.timeanddate.com/clock/i66pyson/n1906/fn4/tct/pct/ftb/ta1" frameborder="0" width="101" height="18" allowTransparency="true"></iframe>
+    <div id="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="container text-center hi" style="background: whitesmoke"><br>
+                    <iframe class="clock" src="http://free.timeanddate.com/clock/i66pyson/n1906/fn4/tct/pct/ftb/ta1" frameborder="0" width="101" height="18" allowTransparency="true"></iframe>
 
-                <h4 style="color: whitesmoke">{{text}}</h4>
-                <br>
-                <div id="icon"><img id="wicon" src="" alt="Weather icon"></div><h2 id="thendi" style="color: whitesmoke"><strong>{{temp}} °C</strong></h2>
-                <br>
-                <!--<p style="color: whitesmoke">{{date|slice:':3'}}</p>-->
-                <p id="patti" style="visibility: hidden">{{code}}</p>
+                    <h4 style="color: whitesmoke">{{text}}</h4>
+                    <br>
+                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div><h2 id="thendi" style="color: whitesmoke"><strong>{{temp}} °C</strong></h2>
+                    <br>
+                    <!--<p style="color: whitesmoke">{{date|slice:':3'}}</p>-->
+                    <p id="patti" style="visibility: hidden">{{code}}</p>
+                </div>
             </div>
-        </div>
         {% endif %}
             <br>
+
         <br>
         <!--forecast-->
         <div class="col-md-offset-9">
@@ -37,7 +40,7 @@
                             <p style="color: whitesmoke"> {{obj.date}}</p>
                             <p style="color: whitesmoke">{{obj.text}}</p>
                             <div class="card-content">
-                                <div id="icon2"><img class="wicon2" src="http://l.yimg.com/a/i/us/we/52/{{obj.code}}.gif" alt="Weather icon"></div>
+                                <div id="icon2"><img class="wicon2" src="http://l.yimg.com/a/i/us/we/52/{{obj.code}}.gif" alt="Weather icon" height="55" width="55"></div>
                                 <p style="color: whitesmoke"><i class="fas fa-arrow-up"></i>{{obj.high}}°C</p>
                                 <p style="color: whitesmoke"><i class="fas fa-arrow-down"></i>{{obj.low}}°C</p>
                             </div>
