@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load staticfiles %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% if form.is_valid %}
+    <h4 style="color: whitesmoke">{{city}}, {{country}}</h4>
+<br>
+    <div id="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="container-fluid text-center hi" style="background: whitesmoke; background-image: url('/media/background/{{code}}.gif')"><br>
+                    <iframe class="clock" src="http://free.timeanddate.com/clock/i66pyson/n1906/fn4/tct/pct/ftb/ta1" frameborder="0" width="101" height="18" allowTransparency="true"></iframe>
+
+                    <h4 style="color: whitesmoke">{{text}}</h4>
+                    <br>
+                    <div id="icon"><img   id="wicon" src="/media/static/{{code}}.png" height="70" width="70" alt="Weather icon"></div><h2 id="thendi" style="color: whitesmoke"><strong>{{temp}} °C</strong></h2>
+                    <br>
+                    <!--<p style="color: whitesmoke">{{date|slice:':3'}}</p>-->
+                    <p style="visibility: hidden" id="patti" >{{code}}</p>
+                </div>
+            </div>
+        {% endif %}
+            <br>
+
+        <br>
+        <!--forecast-->
+        <div class="col-md-offset-9">
+            <div class="row">
+                {% for obj in forecast|slice:":6" %}
+                    <div class="col-sm-offset-5 text-center" style="color: #7a43b6">
+                        <div class="card" style="background-image: url('/media/background/{{obj.code}}.gif')">
+                            <p style="color: whitesmoke"> {{obj.date}}</p>
+                            <p style="color: whitesmoke">{{obj.text}}</p>
+                            <div class="card-content">
+                                <div id="icon2"><img class="wicon2" src="/media/static/{{obj.code}}.png" height="70" width="80" ></div>
+                                <p style="color: whitesmoke"><i class="fas fa-arrow-up"></i>{{obj.high}}°C</p>
+                                <p style="color: whitesmoke"><i class="fas fa-arrow-down"></i>{{obj.low}}°C</p>
+                            </div>
+                        </div>
+                        <p style="visibility: hidden" class='icon1'>{{obj.code}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

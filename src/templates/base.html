@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Now</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#"><strong>WEATHER</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> </a>
+                </li>
+                <li class="nav-item">
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+            </ul>
+            <div class="form-inline">
+                <div class="md-form mt-0">
+                    <form method="post" action="" style="background: whitesmoke">
+                        {% csrf_token %}
+                        {{form}}
+                        <button class="btn btn-success btn-sm" type="submit">Get Weather</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script>
+ //   $(document).ready(function () {
+//        var content = $('#patti').text();
+//        var iconurl = 'http://l.yimg.com/a/i/us/we/52/' +content+ '.gif';
+  //      $('#wicon').attr('src', iconurl);
+
+
+  //      $.each($('.icon1'), function( ) {
+  //          var content2 = $(this).text();
+            //console.log("content=",content2);
+  //          var iconurl2 = 'http://l.yimg.com/a/i/us/we/52/' +content2+ '.gif';
+   //         console.log(iconurl2);
+   //         var final = $('.wicon2').attr('src', iconurl2);
+   //         console.log(final)
+   //     });
+   // });
+</script>
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+            {% block body %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+
+body{
+
+    background: white url("images/background3.jpg")!important;
+    background-size: cover !important;
+}
+
+#icon {display:inline-block;margin-right:10px !important;}
+#thendi {display:inline-block !important;}
+
+
+.container{
+        border-radius: 5px !important;
+        background: peru url("images/background4.jpg") !important;
+        max-height: 10cm !important;
+
+}
+.icon2 {display:inline-block;margin-right:10px !important;}
+#nari {display:inline-block !important;}
+
+.row{
+    display: -webkit-flex !important;
+    flex-wrap: nowrap !important;
+}
+
+.card{
+    min-width: 4.7cm !important;
+    max-height: 7cm !important;
+    min-height: 7cm !important;
+}
+
+.hi{
+    min-height: 7cm !important;
+    max-height: 7cm !important;
+    border-radius: 5px !important;
+
+}
+
+#t1c{
+    color: whitesmoke !important;
+}
